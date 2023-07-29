@@ -23,7 +23,7 @@ int ehPosicaoValida(char mapa[][24], int l, int c)
 }
 void posicionamentoDasPecas(char mapa[][24], int vez)
 {
-    printf("Agora, vocês irão se alternar para posicionar suas peças nos pontos do tabuleiro\n");
+    printf("Vez do jogador - %d escolher\n", vez % 2);
     int l, c;
     scanf("%d %d", &l, &c);
     while (!ehPosicaoValida(mapa, l, c))
@@ -41,6 +41,7 @@ int main()
     char mapa[11][24];
     abrirMapa(mapa);
     int escolhaDeJogador = -1;
+    printf("Agora, vocês irão se alternar para posicionar suas peças nos pontos do tabuleiro\n");
     while (escolhaDeJogador != 0 && escolhaDeJogador != 1)
     {
         system("clear");
@@ -52,6 +53,7 @@ int main()
     int vez = 0;
     while (vez < 18)
     {
+
         posicionamentoDasPecas(mapa, vez);
         vez += 1;
     }
